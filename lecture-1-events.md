@@ -99,8 +99,27 @@ All DOM nodes have methods we can use to _notify_ us of an event.
 
 ```js
 // Example
+const button = document.getElementbyId("btn")
+button.addEventListener("click, function() {
+    console.log("ouch");
+})
+
+//beter way to avoid repeating this for others (we add a handler)
+
+const button = document.getElementBYId("btn");
+function handleOuch = function() {
+    console.log("ouch");
+}
+
+//add it
+button.addEventListener("click, handleOuch);
+
+
+//remove it
+button.removeEventListener("click,handleOuch);
 
 ```
+
 
 ---
 
@@ -160,6 +179,22 @@ Handlers registered on nodes with children will also receive events that happen 
 
 **most** events bubble
 
+Example of using capture phase:
+
+var p - document.querySelector('#parent');
+p.addEventListener("click, function() {
+    console.log("parent click")
+},true );  //we have to pass the true variable after the callback
+
+var c = document.querySelector("#child");
+c.addEeventlistener("click, function() {
+    console.log("child clicked)
+}, true) //we have to pass the true variable after the callback
+
+//returns "parent clicked" "Child clickded"
+
+If we didnt put the true it would bubble and we could get child clicked log first
+
 ---
 
 <img src='./assets/propagation_bubbling.png' />
@@ -197,5 +232,19 @@ This can occur if you have long-running event handlers, or _lots_ of short-runni
 ---
 
 [Read a little more deeply...](https://eloquentjavascript.net/15_event.html)
+
+//extra notes
+function pageLoadedHandler() {
+    alert("im alive")
+}
+window.onload = pageLoadedHandler (notice we are not calling the function just assigning it)
+
+
+(onload is triggered when the browser has fully loaded and displayed and built out the DOM)
+
+
+
+
+
 
 ---

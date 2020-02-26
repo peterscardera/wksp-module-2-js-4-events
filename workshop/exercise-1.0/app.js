@@ -9,3 +9,16 @@
 // OPTIONAL
 // Feel free to add some CSS to this once you're done
 // --------------------------------------------------
+
+let fullPage = document.querySelector("body");
+
+fullPage.style.height = "100vh";
+
+let screen = document.getElementById("main");
+
+function clickerHandler() {
+    screen.innerHTML = "YOU CLICKED"
+};
+
+
+fullPage.addEventListener("click", clickerHandler )

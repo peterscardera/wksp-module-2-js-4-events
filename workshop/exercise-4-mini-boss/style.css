@@ -1,0 +1,53 @@
+body {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #FBDBC1;
+}
+
+.first {
+    max-width: 900px;
+    height: 600px;
+    background-color: #d0edf1;
+    border: solid 15px #72777B;
+    position: relative;
+    
+}
+
+#start {
+    display: flex;
+    justify-content: center;
+}
+
+button {
+    background-color: #430C15;
+    border-radius:  30%;
+    height: 100px;
+    width: 100px;
+    margin: 14px;
+    font-size: 2rem;
+    color: ivory;
+}
+
+.clickedStart {
+    animation: scale 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+@keyframes scale{
+    0% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(0.5);
+      color: black;
+      background-color: #FBDBC1;
+      border: none;
+    }
+  }
+  
+  
+.clickedColor {
+    background-color: rgba(67, 12, 21, .4)
+}

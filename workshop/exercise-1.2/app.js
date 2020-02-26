@@ -15,3 +15,41 @@
 
 // Challenge
 // Make the countdown live...
+
+//"Anywhere on the screen"
+let body = document.querySelector("body");
+body.style.height = "100vh"
+body.style.background = "lightgrey"
+
+///RANDOM NUMBER MAX 5 and cant start at 0 
+let time = document.getElementById("time")
+const number = Math.floor(Math.random() * 5) + 1 // so that its never 0
+time.innerText =  number //or `countdown${number}`
+
+//TAKING THE RANDOM NUMBER AND COUNTING IT DOWN
+let countDownStart = number;
+
+let starter = setInterval(startF, 1000)
+
+function startF() {
+    // let countDownStart = number; cant be in the function
+    countDownStart--
+    if(countDownStart === 0) {
+         let answer = document.querySelector("#result");
+        answer.innerText = ("You lose") 
+        clearInterval(starter);
+    }
+}
+
+//Event Handler if click
+function clickHandler() {
+    clearInterval(starter);
+    
+    if(number >= 1) {
+        let answer = document.querySelector("#result");
+        answer.innerText = ("You Win")
+    }
+}
+
+body.addEventListener("click",clickHandler);
+

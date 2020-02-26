@@ -9,7 +9,7 @@
 
         para.addEventListener("mousedown", () => {
           console.log("Handler for paragraph.");
-        });
+        }); // we but true and its caputre instead of bubble
         
         button.addEventListener("mousedown", event => {
           console.log("Handler for button.");
@@ -19,3 +19,10 @@
 </body>
 
 </html>
+
+/*
+
+ a click first triggers mousedown, when the button is pressed, then mouseup and click when it’s released.
+
+
+*/
